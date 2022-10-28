@@ -1,0 +1,26 @@
+{
+  "name": "mycli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "mycli": "/bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanyang2551/mycli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanyang2551/mycli/issues"
+  },
+  "homepage": "https://github.com/yanyang2551/mycli#readme",
+  "dependencies": {
+    "commander": "^9.4.1"
+  }
+}
