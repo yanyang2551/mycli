@@ -19,46 +19,10 @@ const { program } = require('commander')
 //   console.log('dest执行了 ')
 // })
 //#endregion
-const examples = {
-  create: ['mycli create <project-name>'],
-  config: [
-    'mycli config set <key> <value>',
-    'mycli config get <key>'
-  ]
-}
-program.on('--help',() =>{
-  console.log('Examples:');
-  Object.keys(examples).forEach(action => {
-    examples[action].forEach(item => {
-      console.log('  ' + item)
-    })
-  })
-})
 
-// 3  ⾃定义命令⽣成
-program
-  // 设置⾃定义命令的名称
-  .command('create <project> [others...]')
-  // 命令的别名
-  .alias('c')
- // 命令的描述，在 --help 时展示
-  .description('创建新的项⽬')
- // 命令执⾏后要进⾏哪些操作
-  .action((name, args) => {
-    // name 是输⼊的项⽬名称
-    console.log(name)
-    // args 是后续的其他参数
-    console.log(args)
-  })
-
-// config 命令
-program
-  .command('config <set|get> [others...]')
-  .alias('cfg')
-  .description('配置信息处理')
-  .action((name, args) => {
-    console.log(name, args)
-  })
-
+const initHelper = require('../lib/core/helper')
+const initCommander = require('../lib/core/commder')
+initHelper(program)
+initCommander(program)
 
 program.parse() // 默认，⾃动识别 electron
